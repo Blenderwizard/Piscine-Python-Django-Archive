@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 %}
+
+{% block h1 %}Chat with <a href="{% url 'user' pk=user2.id %}">{{ user2.username }}</a>{% endblock %}
+
+{% block content %}
+        <table id="chat">
+        <tbody>
+            <tr>
+                <td class="td1">
+                    <div id="messages">
+                        {% for msg in object_msglist %}
+                            <p {% if msg.user == request.user %}class="my-message"{% endif %}>
+                                <span class="msg">{{ msg.content }}</span>
+                                <span class="date">{{ msg.created }}</span>
+                            </p>
+                        {% endfor %}
+                    </div>
+                <script>document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight</script>
+                </td>
+            </tr>
+            <tr>
+                <td class="td2">
+                    <form action="{{ path }}" method="post" class="input-group">
+                        {% csrf_token %}
+                        <input id="msgbox" name="content" class="form-control" aria-label="Text input with multiple buttons">
+                        <div class="input-group-btn">
+                            <button id="sendmsg" type="submit" class="btn btn-primary">Send</button>
+                        </div>
+                    </form>
+                    {{ form.non_field_errors }}
+                    {{ form.subject.errors }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a href="{% url 'discussions' %}">Go back to the discussion list</a></p>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Details
+{% endblock title %}
+
+{% block content %}
+	<table>
+		<tr>
+			<th>
+				{{ article.title }}
+				By: {{ article.author }}
+			</th>
+		</tr>
+		<tr>
+			<td>
+				{{ article.synopsis }}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ article.content }}
+			</td>
+			<td>
+				{{ article.created }}
+			</td>
+		</tr>
+	</table>
+	<form action="" method="post">
+		{% csrf_token %}
+		{{ form }}
+		<input type="submit" name="favorite" value="Favorite" />
+	</form>
+{% endblock content %}

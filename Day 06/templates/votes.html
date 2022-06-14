@@ -1,0 +1,42 @@
+{% block votes %}
+{% if login %}
+	<td>
+		<form action="" method="post">
+			{% csrf_token %}
+			<input class="delete" type="submit" name="delete" value="Delete" />
+			<input id="id" name="id" type="hidden" value="{{row.id}}">
+		</form>
+	</td>
+	<td>
+		<form action="" method="post">
+			{% csrf_token %}
+			<input class="up" type="submit" name="upvote" value="Upvote" />
+			<input id="id" name="id" type="hidden" value="{{row.id}}">
+		</form>
+	</td>
+	<td>
+		<form action="" method="post">
+			{% csrf_token %}
+			<input class="down" type="submit" name="downvote" value="Downvote" />
+			<input id="id" name="id" type="hidden" value="{{row.id}}">
+		</form>
+	</td>
+{% else %}
+	<td>
+		<form action="" method="post">
+			<input class="delete" type="submit" name="delete" value="delete" disabled/>
+		</form>
+	</td>
+	<td>
+		<form action="" method="post">
+			<input class="up" type="submit" name="upvote" value="up" disabled/>
+		</form>
+	</td>
+	<td>
+		<form action="" method="post">
+			<input class="down" type="submit" name="downvote value="down" disabled/>
+		</form>
+	</td>
+{% endif %}
+{% endblock votes %}
+	

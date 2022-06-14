@@ -1,0 +1,22 @@
+{% block nav %}
+<nav>
+	<h3>
+		<a href="/" >
+			Life Pro Tips
+		</a>
+	</h3>
+	Welcome user {{ request.COOKIES.username }}
+	{% if login %}
+		<a href="logout">
+			logout
+		</a>
+	{% else %}
+		<a href="signin">
+			signin
+		</a>
+		<a href="signup">
+			signup
+		</a>
+	{% endif %}
+</nav>
+{% endblock nav %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load bootstrap3 %}
+
+{% block title %}{{ forum.title }} By: {{ forum.author }}{% endblock %}
+
+{% block content %}
+<div class="topic">
+	<table>
+		<tr>
+			<th>
+				{{ forum.title }}
+				{% if forum.userinfo.avatar %}
+					By: <img src="{{ forum.userinfo.avatar.url }}" style="max-width:30px;" > <a href="{% url 'user' pk=forum.author.id %}">{{ forum.author }}</a>
+				{% else %}
+					By: <img src="/media/default.png" style="max-width:30px;" > <a href="{% url 'user' pk=forum.author.id %}">{{ forum.author }}</a>
+				{% endif %}
+			</th>
+		</tr>
+		<tr>
+			<td>
+				{{ forum.content|linebreaksbr }}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{ forum.created }}
+			</td>
+		</tr>
+	</table>
+    {% if isuser %}
+        <form action="" method="post" class="form-comment">
+            {% csrf_token %}
+            {# {% bootstrap_form form show_label=False %} #}
+            {% bootstrap_field form.content show_label=False %}
+            <input id="parrentForm" name="parrentForm" type="hidden" value="{{ forum.id }}">
+            <input style="position: relative; right:0" type="submit" class="btn btn-primary" value="Comment" />
+        </form>
+    {% endif %}
+	<ul>
+        {% for comment in forum.commentmodel_set.all %}
+            {% include 'forum/tools/comment_recursion.html' %}
+        {% endfor %}
+	<ul>
+</div>
+{% endblock content %}

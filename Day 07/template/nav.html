@@ -1,0 +1,17 @@
+{% block nav %}
+	<nav>
+		<a href="/">Home</a>
+		<a href="/articles">Articles</a>
+		{% if isuser %}
+			<a href="/favourites">Favourites</a>
+			<a href="/publications">Publications</a>
+			<span>
+				Loged in as {{ username }}
+			</span>
+			<a href="/logout">Logout</a>
+		{% else %}
+			<a href="/login">Login</a>
+			<a href="/register">Register</a>
+		{% endif %}
+	</nav>
+{% endblock nav %}

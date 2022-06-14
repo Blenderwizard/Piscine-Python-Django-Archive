@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			Index
+		</title>
+	</head>
+	<body>
+		{% block nav %}
+		{% endblock nav %}
+		{% include 'nav.html' %}
+		{% if login %}
+			{% block form %}
+			{% endblock form %}
+			{% include 'form.html' %}
+		{% endif %}
+		<table>
+			{% for row in tips %}
+				<tr>
+					<td>
+						{{ row.content }}
+					</td>
+					<td>
+						{{ row.author }}
+					</td>
+					<td>
+						{{ row.date }}
+					</td>
+					<td>
+						{{ row.upvoted.count }}
+					</td>
+					<td>
+						{{ row.downvoted.count }}
+					</td>
+					{% block votes %}
+					{% endblock votes %}
+					{% include 'votes.html' %}
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>

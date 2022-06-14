@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			Data
+		</title>
+		<style>
+			td, tr, th, table {
+				border: solid black;
+				border-collapse: collapse;
+			}
+			td {
+				padding: 3px;
+			}
+		</style>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<table>
+			{% for row in data %}
+				<tr>
+					<td>
+						{{ row.episode_nb }}
+					</td>
+					<td>
+						{{ row.title }}
+					</td>
+					<td>
+						{{ row.opening_crawl }}
+					</td>
+					<td>
+						{{ row.director }}
+					</td>
+					<td>
+						{{ row.producer }}
+					</td>
+					<td>
+						{{ row.release_date }}
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>

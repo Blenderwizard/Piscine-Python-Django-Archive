@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			Table
+		</title>
+		<style>
+			th, td {
+				width: 80px;
+				height: 40px;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				{% for col in cols %}
+					<th style="background-color: {{col}};">
+						{{col.name}}
+					</th>
+				{% endfor %}
+			</tr>
+			{% for row in rows %}
+				<tr>
+				{% for col in cols %}
+					<td style="background-color: {{col}};"></td>
+				{% endfor %}
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>

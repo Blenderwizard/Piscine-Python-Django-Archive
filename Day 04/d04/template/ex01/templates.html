@@ -1,0 +1,43 @@
+{% extends "ex01/base.html" %}
+
+{% block title %}
+<title>
+	{{title}}
+</title>
+{% endblock title %}
+
+{% load static %} {% block style %}
+<link href="{% static 'style2.css' %}" rel="stylesheet">
+{% endblock style %}
+
+{% block content %}
+<h1>Templates</h1>
+<h2>
+	Blocks
+</h2>
+<p>
+	The block tag defines three blocks that child templates can fill in. All the block tag does is to tell the <br />
+	template engine that a child template may override those portions of the template.
+</p>
+<h2>
+	for ... in ...
+</h2>
+<p>
+	The for block functions exactly like a for loop in python, it will iterate through an iterable object and render <br />
+	out equal to its length
+</p>
+<h2>
+	if ...
+</h2>
+<p>
+	The for block functions exactly like a if condition in python, it will only render if true.
+</p>
+<h2>
+	Variables
+</h2>
+<p>
+	When the render function is called on the template, you can pass an optional dictionary to the function where keys are <br />
+	varable names and there content is the value of said key. Variables can be used by themselves, with flow statements like <br />
+	for and if.
+</p>
+{% endblock %}

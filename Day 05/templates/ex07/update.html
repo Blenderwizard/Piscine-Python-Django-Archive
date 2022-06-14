@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			Update
+		</title>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<form action="" method="post">
+			{% csrf_token %}
+			<select name="selection" id="cars" required>
+				{% for row in data %}
+					<option value="{{ row }}" >
+						{{ row }}
+					</option>
+				{% endfor %}
+			</select>
+			<input type="text" name="content" required />
+			<input type="submit" name="submit" value="submit" />
+		</form>
+	</body>
+</html>

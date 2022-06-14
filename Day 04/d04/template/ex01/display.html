@@ -1,0 +1,54 @@
+{% extends "ex01/base.html" %}
+
+{% block title %}
+<title>
+	{{title}}
+</title>
+{% endblock title %}
+
+{% block content %}
+<h1>
+	Display
+</h1>
+<h2>
+	Request
+</h2>
+<p>
+	Django allows users to define specific routes that handle an http request from a user. <br />
+	Its as simple as adding the route to the url_patterns list found most commonly in url.py <br />
+	and defining a function to handle the request.
+</p>
+<h2>
+	Static files
+</h2>
+<p>
+	Static files are defined in the settings.py of the django project. They contain frontend files <br />
+	for the webservice. They are used by templates to render content.
+</p>
+<h2>
+	Templates
+</h2>
+<p>
+	Django Templates are used to create HTML interfaces that get rendered with a Django view. <br />
+	A TemplateView is a generic class-based view that helps developers create a view for a specific <br />
+	template without re-inventing the wheel. TemplateView is the simplest one of many generic views <br />
+	provided by Django. <br />
+	<br />
+	Django Templates use blocks to singal parts of the file that need replacing, and templates can also <br />
+	upon other templates. This allows for a fast creation of simular html pages without having to copy <br />
+	yourself alot.
+</p>
+<h2>
+	Rendering
+</h2>
+<p>
+	Whenever a route needs to return a web page, an associated template is rendered. This means that <br />
+	Django will parse the Template into valid html code that any browser could render.
+</p>
+<h2>
+	Response
+</h2>
+<p>
+	After a Template has been parsed by the render function, the created HTML code is sent back to the user.
+</p>
+{% endblock %}

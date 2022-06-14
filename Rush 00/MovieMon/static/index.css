@@ -1,0 +1,157 @@
+body{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+div{
+	background: yellowgreen;
+	border-radius: 10%;
+	position: relative;
+	width: 40%;
+	height: 80vh;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%, -25%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.table{
+	width: 80%;
+	height: 75%;
+	border-collapse: collapse;
+}
+
+.td {
+	background-image: url("./Screen\ Shot\ 2022-06-05\ at\ 1.30.04\ PM\ 1.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+div .image{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url("./player_prev_ui.png"), url("./Screen\ Shot\ 2022-06-05\ at\ 1.30.04\ PM\ 1.png");;
+	background-repeat: no-repeat;
+	background-size: contain;	
+}
+
+.info{
+
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 75%;
+	position: relative;
+	justify-content: space-around;
+	text-align: center;
+	color: white;
+}
+form{
+	position: relative;
+	width: 80%;
+	height: 25%;
+}
+
+.information{
+	width: 50%;
+	height: 100%;
+	background: red;
+}
+.info_movie{
+	display: flex;
+	width: 100%;
+}
+
+.battle_image{
+	width: 20%;
+	height: auto;
+}
+
+input{
+	position: absolute;
+}
+
+.a{
+	width: 40px;
+	height: 40px;
+	right: 20%;
+	top: 30%;
+	border-radius: 50%;
+	background-color: cadetblue;
+	color: black;
+}
+
+.b{
+	width: 40px;
+	height: 40px;
+	right: 10%;
+	top: 20%;
+	border-radius: 50%;
+	background-color: cadetblue;
+	color: black;
+}
+
+.select{
+	display: flex;
+	justify-content: center;
+	width: 50px;
+	height: 20px;
+	top: 50%;
+	right: 40%;
+	background-color: cadetblue;
+	content: none;
+}
+
+.start{
+	display: flex;
+	justify-content: center;
+	width: 50px;
+	height: 20px;
+	top: 50%;
+	right: 50%;
+	background-color: cadetblue;
+	content: none;
+}
+
+.down{
+	position: absolute;
+	top: 75%;
+	left: 7.5%;
+	width: 30px;
+	height: 30px;
+	background-color: cadetblue;
+}
+.up{
+	position: absolute;
+	top: 27%;
+	left: 7.5%;
+	width: 30px;
+	height: 30px;
+	background-color: cadetblue;
+}
+.left{
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	width: 30px;
+	height: 30px;
+	background-color: cadetblue;
+}
+
+.right{
+	background-color: cadetblue;
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	width: 30px;
+	height: 30px;
+}
+
+input:enabled{
+	color: white;
+}

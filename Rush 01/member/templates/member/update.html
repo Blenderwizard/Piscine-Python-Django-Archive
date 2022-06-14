@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 %}
+
+{% block title %}{{userinfo.user}}{% endblock %}
+
+{% block content %}
+	<form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{% for field in form %}
+			{% if field.name == 'staff' %}
+				{% if is_staff %}
+					<label for="id_staff">
+						Is Staff:
+					</label>
+					<div class="form-group">
+						<div class="row bootstrap3-multi-input">
+							{% if user_is_staff %}
+								<input type="checkbox" name="staff" class="" id="id_staff" checked />
+							{% else %}
+								<input type="checkbox" name="staff" class="" id="id_staff" />
+							{% endif %}
+						</div>
+					</div>
+				{% endif %}
+			{% else %}
+				{{ field.errors }}
+				<label for="{{ field.id_for_label }}">{{ field.label }}:
+					{% if field.name == 'name' %}
+						{% if userinfo.name %}
+							{{userinfo.name}}
+						{% else %}
+							Name not set
+						{% endif %}
+					{% elif field.name == 'surname' %}
+						{% if userinfo.surname %}
+							{{userinfo.surname}}
+						{% else %}
+							Surname not set
+						{% endif %}
+					{% elif field.name == 'email' %}
+						{% if userinfo.email %}
+							{{userinfo.email}}
+						{% else %}
+							Email not set
+						{% endif %}
+					{% elif field.name == 'description' %}
+						{% if userinfo.description %}
+							{{userinfo.description}}
+						{% else %}
+							Description not set
+						{% endif %}
+					{% elif field.name == 'avatar' and userinfo.avatar %}
+                        <img src="{{ userinfo.avatar.url }}" style="max-width:100px;">
+					{% endif %}
+				</label>
+				{% bootstrap_field field show_label=False required=false%}
+			{% endif %}
+		{% endfor %}
+		<input type="submit" value="Update" />
+	</form>
+{% endblock %}

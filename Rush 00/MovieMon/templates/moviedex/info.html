@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>
+	{{title}}
+</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="info">
+	<h1 style="height: 10%; font-size: 15px">
+	{{ movieinfo.name }} Information
+	</h1>
+	<img class="battle_image" src="{{ movieinfo.poster }}" /> 
+	<p >
+		Name: {{ movieinfo.name }}<br>
+		Director: {{ movieinfo.director }}<br>
+		Release Year: {{ movieinfo.year }}<br>
+		Rating: {{ movieinfo.rating  }}<br>
+		Actors: {{ movieinfo.actors }}
+	</p>
+	<p>
+		Synopsis: {{ movieinfo.synopsis }}
+	</p>
+	<p>
+		B: Back
+	</p>
+</div>	
+
+{% endblock content %}

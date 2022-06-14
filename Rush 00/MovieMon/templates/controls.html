@@ -1,0 +1,47 @@
+{% block controls %}
+<form action="" method="post">
+	{% csrf_token %}
+	{% if a_enabled %}
+		<input class="a" type="submit" name="A" value="A" />
+	{% else %}
+		<input class="a" type="submit" name="A" value="A" disabled/>
+	{% endif %}
+	{% if b_enabled %}
+		<input class="b" type="submit" name="B" value="B" />
+	{% else %}
+		<input class="b" type="submit" name="B" value="B" disabled/>
+	{% endif %}
+	{% if start_enabled %}
+		<input class="start" type="submit" name="Start" value="Start" />
+	{% else %}
+		<input class="start" type="submit" name="Start" value="Start" disabled/>
+	{% endif %}
+	{% if select_enabled %}
+		<input class="select" type="submit" name="Select" value="Select" />
+	{% else %}
+		<input class="select" type="submit" name="Select" value="Select" disabled/>
+	{% endif %}
+	{% if left_enabled %}
+		<input class="left" type="submit" name="Left" value="Left" />
+	{% else %}
+		<input class="left" type="submit" name="Left" value="Left" disabled/>
+	{% endif %}
+	{% if up_enabled %}
+		<input class="up" type="submit" name="Up" value="Up" />
+	{% else %}
+		<input class="up" type="submit" name="Up" value="Up" disabled/>
+	{% endif %}
+	{% if down_enabled %}
+		<input class="down" type="submit" name="Down" value="Down" />
+	{% else %}
+		<input class="down" type="submit" name="Down" value="Down" disabled/>
+	{% endif %}
+	{% if right_enabled %}
+		<input class="right" type="submit" name="Right" value="Right"/>
+	{% else %}
+		<input class="right" type="submit" name="Right" value="Right" disabled/>
+	{% endif %}
+	<input id="formId" name="formId" type="hidden" value="{{formid}}">
+</form>
+{% endblock controls %}
+	

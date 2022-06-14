@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Publish
+{% endblock title %}
+
+{% block content %}
+	{% if isuser %}
+		<form action="" method="post">
+			{% csrf_token %}
+			{{ form }}
+			<input type="submit" name="submit" />
+		</form>
+	{% endif %}
+{% endblock content %}

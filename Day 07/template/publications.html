@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Publications
+{% endblock title %}
+
+{% block content %}
+	{% if isuser %}
+		<table>
+			{% for members in object_list %}
+				<tr>
+					<th>
+						<a href="articles/{{ members.id }}">{{ members.title }}</a>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						{{ members.synopsis }}
+					</td>
+					<td>
+						{{ members.created }}
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% else %}
+		<p>
+			Not logged in
+		</p>
+	{% endif %}
+{% endblock content %}

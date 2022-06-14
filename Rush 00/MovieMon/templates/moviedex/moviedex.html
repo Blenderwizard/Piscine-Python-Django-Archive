@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>
+	{{title}}
+</title>
+{% endblock title %}
+{% block content %}
+<h1>
+	Moviedex
+</h1>
+<p>
+	Completion: {{ caught }} / {{ total }}
+</p>
+
+<table>
+	<tr>
+		{% for i in movies %}
+			<td>
+			<!--	{% if forloop.counter0 == dexpos %}
+					<p>Selected: </p>
+				{% endif %}-->
+					{{ dexpos }}
+					Name : {{ i.name }}
+					<img class="battle_image" src="{{i.poster}}" alt="">	
+			</td>
+		{% endfor %}
+	</tr>
+</table>
+<p>
+	A: More information
+</p>
+<p>
+	Select: Back
+</p>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>
+	{{title}}
+</title>
+{% endblock title %}
+
+{% block content %}
+<h1>
+	Save
+</h1>
+<ul>
+	{% for i, j, k in slots %}
+		<li>
+			<p>
+				{% if forloop.counter0 == slotpos %}
+					Selected: 
+				{% endif %}
+				Slot {{ i }}
+				{% if j == 0 and k == 0 %}
+					Free
+				{% else %}
+					{{ j }} / {{ k }}
+				{% endif %}
+			</p>
+		</li>
+	{% endfor %}
+</ul>
+<p>
+	A: Save
+</p>
+<p>
+	B: Cancel
+</p>
+{% endblock content %}

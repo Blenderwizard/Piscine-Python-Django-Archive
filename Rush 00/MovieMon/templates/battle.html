@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>
+	{{title}}
+</title>
+{% endblock title %}
+
+{% block content %}
+<h1>
+	Battle
+</h1>
+<p>
+	Number of Movieballs: {{ movieball_count }}
+</p>
+{% if caught %}
+	<p>
+		YOU CAUGHT IT!
+	</p>
+{% endif %}
+<div class="info_movie">
+	<img class="battle_image" src="{{ movieinfo.poster }}" /> 
+	<p>
+		Strength: {{ movieinfo.strength }}<br>
+		A: Launch Movieball<br>
+		B: Back
+	</p>
+</div>
+
+{% endblock content %}

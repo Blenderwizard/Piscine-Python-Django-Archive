@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>
+	{{title}}
+</title>
+{% endblock title %}
+
+{% block content %}
+<p>
+	Number of Movieballs: {{ movieball_count }}
+	{% if encounter_moviemon %}
+		Moviemon encountered!
+	{% endif %}
+	{% if encounter_ball %}
+		Movieball Found!
+</p>
+{% endif %}
+<table class="table">
+	{% for y in rows %}
+		<tr>
+			{% for x in rows %}
+				{% if player.x == x and player.y == y %}
+					<td class="td">
+						<div class="image"></div>
+					</td>
+				{% else %}
+					<td class="td"></td>
+				{% endif %}
+			{% endfor %}
+		</tr>
+	{% endfor %}
+</table>
+{% endblock content %}

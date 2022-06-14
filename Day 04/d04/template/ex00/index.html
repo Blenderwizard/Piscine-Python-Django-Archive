@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			Ex00: Markdown Cheatsheet.
+		</title>
+		<style>
+			table, tr, th, td {
+				border: solid black;
+				border-collapse: collapse;
+				text-align: center;
+			}
+		</style>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<h1>
+			Basic Syntax
+		</h1>
+		<p>These are the elements outlined in John Gruber original design document. All Markdown applications support these elements.</p>
+		<table>
+			<tr>
+				<th>
+					<p>
+						Element
+					</p>
+				</th>
+				<th>
+					<p>
+						Markdown Syntax
+					</p>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Heading
+					</p>
+				</td>
+				<td>
+					<p>
+						# H1<br />
+						## H2<br />
+						### H3
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Bold
+					</p>
+				</td>
+				<td>
+					<p>
+						**bold text**
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Italic
+					</p>
+				</td>
+				<td>
+					<p>
+						*italicized text*
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Blockquote
+					</p>
+				</td>
+				<td>
+					<p>
+						&gt; blockquote
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Ordered List
+					</p>
+				</td>
+				<td>
+					<p>
+						1. First item<br />
+						2. Second item<br />
+						3. Third item
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Unordered List
+					</p>
+				</td>
+				<td>
+					<p>
+						- First item<br />
+						- Second item<br />
+						- Third item
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Code
+					</p>
+				</td>
+				<td>
+					<p>
+						`code`
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Horizontal Rule
+					</p>
+				</td>
+				<td>
+					<p>
+						---
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Link
+					</p>
+				</td>
+				<td>
+					<p>
+						[title](https://www.example.com)
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Image
+					</p>
+				</td>
+				<td>
+					<p>
+						![alt text](image.jpg)
+					</p>
+				</td>
+			</tr>
+		</table>
+		<br />
+		<h1>
+			Extended Syntax
+		</h1>
+		<p>
+			These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.
+		</p>
+		<table>
+			<tr>
+				<th>
+					<p>
+						Element
+					</p>
+				</th>
+				<th>
+					<p>
+						Markdown Syntax
+					</p>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Table
+					</p>
+				</td>
+				<td>
+					<p>
+						| Syntax | Description | <br />
+						| ----------- | ----------- | <br />
+						| Header | Title | <br />
+						| Paragraph | Text |
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Fenced Code Block
+					</p>
+				</td>
+				<td>
+					<p>
+						```<br />
+						{<br />
+						"firstName": "John",<br />
+						"lastName": "Smith",<br />
+						"age": 25<br />
+						}<br />
+						```
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Footnote
+					</p>
+				</td>
+				<td>
+					<p>
+						Here's a sentence with a footnote. [^1]<br />
+						<br />
+						[^1]: This is the footnote.
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Heading ID
+					</p>
+				</td>
+				<td>
+					<p>
+						### My Great Heading {#custom-id}
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Definition List
+					</p>
+				</td>
+				<td>
+					<p>
+						term<br />
+						: definition
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Strikethrough
+					</p>
+				</td>
+				<td>
+					<p>
+						~~The world is flat.~~
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Task List
+					</p>
+				</td>
+				<td>
+					<p>
+						- [x] Write the press release<br />
+						- [ ] Update the website<br />
+						- [ ] Contact the media
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Emoji
+					</p>
+				</td>
+				<td>
+					<p>
+						(see also Copying and Pasting Emoji)<br />
+						That is so funny! :joy:
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Highlight
+					</p>
+				</td>
+				<td>
+					<p>
+						I need to highlight these ==very important words==.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Subscript
+					</p>
+				</td>
+				<td>
+					<p>
+						H~2~O
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						Superscript
+					</p>
+				</td>
+				<td>
+					<p>
+						X^2^ 
+					</p>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

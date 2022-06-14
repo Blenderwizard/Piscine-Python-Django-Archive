@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Articles
+{% endblock title %}
+
+{% block content %}
+	<table>
+		{% for members in object_list %}
+			<tr>
+				<th>
+					<a href="articles/{{ members.id }}">{{ members.title }}</a>
+					By: {{ members.author }}
+				</th>
+			</tr>
+			<tr>
+				<td>
+					{{ members.synopsis|truncatechars:20 }}
+				</td>
+				<td>
+					{{ members.created }}
+				</td>
+				<td>
+					{{ members.created|timesince }}
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock content %}
